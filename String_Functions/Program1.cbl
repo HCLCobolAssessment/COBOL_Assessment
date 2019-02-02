@@ -1,6 +1,6 @@
        IDENTIFICATION DIVISION.
        PROGRAM-ID. HELLO-WORLD.
-       AUTHOR.  LEEDA.
+       AUTHOR.  LEEDAa.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
        01 xStr PIC X(50) VALUE "Hi All This is the first source string".
