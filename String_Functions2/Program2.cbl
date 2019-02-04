@@ -3,7 +3,7 @@
        AUTHOR.  HCL.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 xStr PIC X(50) VALUE "Hii Th All is is the sour".
+       01 xStr PIC X(50) VALUE "Hii Th All is is the mainframe".
        01 aNum PIC 9(2) VALUE 0.
        01 bNum PIC 9(2) VALUE 0.
        01 yStr PIC X(25) VALUE 'ABCDADADADABVDFDFFAF'.
