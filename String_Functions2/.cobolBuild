@@ -89,6 +89,7 @@
 	<mffilelist type="srcfile" id="cobol_file_set_1" srcdir="${basedir}">
 		<file name="Program1.cbl"/>
 		<file name="Program2.cbl"/>
+		<file name="Program3.cbl"/>
 	</mffilelist>
 	<!-- COBOL copybook locations -->
 	<mffilelist id="cobol.copybook.locations">
@@ -114,6 +115,14 @@
 		<cobollink debug="true" destfile="Program2" objectfile="Program2${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
 		</cobollink>
 	</target>
+	<target name="FileCompile.New_Configuration.Program3.cbl">
+		<cobol debug="true" analysisData="${analysisData}" threadCount="${buildThreadCount}" threadedRts="true" analysisDataDir="${analysisDataDir}" useDirectiveSet="${useDirectiveSet}" srcfile="Program3.cbl" destdir="${basedir}/New_Configuration.bin" is64bit="true" failonerror="${cobolFailOnError}" srcdir="${basedir}" forceCompile="${forceCompile}" connectionName="${connectionName}" projectName="${projectName}" desttype="obj">
+			<mffilelist refid="cobol.copybook.locations"/>
+			<mfdirlist refid="cobol_directive_set_1"/>
+		</cobol>
+		<cobollink debug="true" destfile="Program3" objectfile="Program3${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
+		</cobollink>
+	</target>
 	<!--  ****************  -->
 	<!--  * Object files *  -->
 	<!--  ****************  -->
@@ -121,6 +130,7 @@
 	<mffilelist id="cobol.default.object.files.New Configuration" srcdir="${basedir}/New_Configuration.bin" type="objfile">
 		<file name="Program1${objext}"/>
 		<file name="Program2${objext}"/>
+		<file name="Program3${objext}"/>
 	</mffilelist>
 	<!--  *************************  -->
 	<!--  * Configuration targets *  -->
@@ -156,6 +166,8 @@
 			<cobollink debug="true" destfile="Program1" objectfile="Program1${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
 			</cobollink>
 			<cobollink debug="true" destfile="Program2" objectfile="Program2${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
+			</cobollink>
+			<cobollink debug="true" destfile="Program3" objectfile="Program3${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
 			</cobollink>
 		</parallel>
 	</target>
