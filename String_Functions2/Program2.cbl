@@ -8,11 +8,11 @@
        01 bNum PIC 9(2) VALUE 0.
        01 yStr PIC X(25) VALUE 'ABCDADADADABVDFDFFAF'.
        01 cNum PIC A(30).
-       01 str1 PIC A(15) VALUE 'HCL'.
+       01 str1 PIC A(15) VALUE 'ABCD'.
        01 str2 PIC A(7) VALUE 'WELCOME'.
        01 str3 PIC A(7) VALUE 'TO '.
        01 dCount PIC 99 VALUE 1.
-       01 str4 PIC A(30) VALUE 'HCL TECHNOLOGIES'.                      
+       01 str4 PIC A(30) VALUE 'MAINFRAME'.                             
 
        PROCEDURE DIVISION.
        DISPLAY 'Hello, world'.
