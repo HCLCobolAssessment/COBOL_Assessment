@@ -6,7 +6,7 @@
        01 xStr PIC X(50) VALUE "Hii Th All is is the mainframe".
        01 aNum PIC 9(2) VALUE 0.
        01 bNum PIC 9(2) VALUE 0.
-       01 yStr PIC X(25) VALUE 'ABCDADADADABVDFDFFAF'.
+       01 yStr PIC X(25) VALUE 'hgdjfklk'.
        01 cNum PIC A(30).
        01 str1 PIC A(15) VALUE 'ABCD'.
        01 str2 PIC A(7) VALUE 'WELCOME'.
