@@ -6,13 +6,16 @@
        01 xStr PIC X(50) VALUE "Hii Th All is is the mainframe".
        01 aNum PIC 9(2) VALUE 0.
        01 bNum PIC 9(2) VALUE 0.
-       01 yStr PIC X(25) VALUE 'hgdjfklk'.
-       01 cNum PIC A(30).
-       01 str1 PIC A(15) VALUE 'LEEDAAA'.
+       01 yStr PIC X(07) VALUE 'HCLWORLD'.
+       01 cNum PIC X(30).
+       01 str1 PIC A(16) VALUE 'WE HAVE OPENINGS'.
        01 str2 PIC A(7) VALUE 'WELCOME'.
-       01 str3 PIC A(7) VALUE 'TO '.
+       01 str3 PIC A(3) VALUE 'TO '.
        01 dCount PIC 99 VALUE 1.
-       01 str4 PIC A(30) VALUE 'MAINFRAME'.                             
+       01 str4 PIC A(30) VALUE 'MAINFRAME'.    
+       01 SPLIT1 PIC X(3).
+       01 SPLIT2 PIC X(4).
+       01 SPLIT3 PIC X(7).	   
 
        PROCEDURE DIVISION.
        DISPLAY 'Hello, world'.
@@ -21,16 +24,16 @@
               *>INSPECT yStr TALLYING aNum FOR ALL CHARACTERS.
               DISPLAY "aNum : "aNum.
               *> count just the A characters
-              INSPECT yStr TALLYING bNum FOR ALL 'A'.
+              INSPECT yStr TALLYING bNum FOR ALL 'L'.
               DISPLAY "bNum : "bNum.
               *> replace A chars with X in strings
               DISPLAY "OLD STRING : "yStr.
-              INSPECT yStr REPLACING ALL 'A' BY 'X'.
+              INSPECT yStr REPLACING ALL 'L' BY 'X'.
               DISPLAY "NEW STRING : "yStr.
               *> string concatenate
               STRING str2 DELIMITED BY SIZE
               str3 DELIMITED BY SPACE
-              str1 DELIMITED BY SIZE
+              str4 DELIMITED BY SIZE
               INTO cNum
               WITH POINTER dCount
               ON OVERFLOW DISPLAY 'OVERFLOW!'
@@ -38,10 +41,10 @@
               DISPLAY 'WS-STRING : 'cNum.
               DISPLAY 'WS-COUNT : 'dCount.
               *> string split
-              UNSTRING str4 DELIMITED BY SPACE
-              INTO str3, str2, str1
+              UNSTRING str1 DELIMITED BY SPACE
+              INTO SPLIT1, SPLIT2, SPLIT3
               END-UNSTRING.
-              DISPLAY 'WS-STR1 : 'str1.
-              DISPLAY 'WS-STR2 : 'str2.
-              DISPLAY 'WS-STR3 : 'str3.
+              DISPLAY 'SPLIT1 : 'SPLIT1.
+              DISPLAY 'SPLIT2 : 'SPLIT2.
+              DISPLAY 'SPLIT3 : 'SPLIT3.
        STOP RUN.
