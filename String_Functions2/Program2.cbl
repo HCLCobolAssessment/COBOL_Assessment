@@ -8,7 +8,7 @@
        01 bNum PIC 9(2) VALUE 0.
        01 yStr PIC X(07) VALUE 'HCLWORLD'.
        01 cNum PIC X(30).
-       01 str1 PIC A(16) VALUE 'WE nane OPENINGS'.
+       01 str1 PIC A(16) VALUE 'HI PUPS COMING..'.
        01 str2 PIC A(7) VALUE 'WELCOME'.
        01 str3 PIC A(3) VALUE 'TO '.
        01 dCount PIC 99 VALUE 20.
