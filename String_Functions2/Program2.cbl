@@ -8,7 +8,7 @@
        01 bNum PIC 9(2) VALUE 0.
        01 yStr PIC X(07) VALUE 'HCLWORLD'.
        01 cNum PIC X(30).
-       01 str1 PIC A(16) VALUE 'HI kitte COMING..'.
+       01 str1 PIC A(16) VALUE 'HI kit COMING..'.
        01 str2 PIC A(7) VALUE 'WELCOME'.
        01 str3 PIC A(3) VALUE 'TO '.
        01 dCount PIC 99 VALUE 20.
@@ -18,7 +18,7 @@
        01 SPLIT3 PIC X(7).	   
 
        PROCEDURE DIVISION.
-       DISPLAY 'hi hi bye, world'.
+       DISPLAY 'hi hi bye, ******'.
        DISPLAY "Task1 = " xStr(9:3)
               *> count the number of chars in string, store in aNum     
               *>INSPECT yStr TALLYING aNum FOR ALL CHARACTERS.
