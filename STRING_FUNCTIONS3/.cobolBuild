@@ -18,7 +18,7 @@
 	<property name="pathVar.ECLIPSE_HOME" value="${env.ECLIPSE_HOME}"/>
 	<property name="pathVar.PARENT_LOC" value="${env.PARENT_LOC}"/>
 	<property name="failOnError" value="false"/>
-	<property name="cobolFailOnError" value="true"/>
+	<property name="cobolFailOnError" value="${failOnError}"/>
 	<property name="cobollinkFailOnError" value="${failOnError}"/>
 	<property name="TESTCOVER_VALUE_ON" value="TESTCOVER"/>
 	<property name="TESTCOVER_VALUE_OFF" value="NOTESTCOVER"/>
@@ -102,6 +102,8 @@
 			<mffilelist refid="cobol.copybook.locations"/>
 			<mfdirlist refid="cobol_directive_set_1"/>
 		</cobol>
+		<cobollink debug="true" destfile="Program2" objectfile="Program2${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
+		</cobollink>
 	</target>
 	<!--  ****************  -->
 	<!--  * Object files *  -->
@@ -140,9 +142,10 @@
 		</cobol>
 	</target>
 	<target name="cobol.link.cfg.New_Configuration">
-		<cobollink debug="true" destfile="STRING_FUNCTIONS3" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
-			<mffilelist refid="cobol.default.object.files.New Configuration"/>
-		</cobollink>
+		<parallel threadCount="${buildThreadCount}">
+			<cobollink debug="true" destfile="Program2" objectfile="Program2${objext}" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" objectdir="${basedir}/New_Configuration.bin" failonerror="${cobollinkFailOnError}" desttype="exe" threadedRts="true">
+			</cobollink>
+		</parallel>
 	</target>
 	<target name="pre.build.cfg.New_Configuration">
 	</target>
@@ -151,11 +154,6 @@
 	<target name="clean.cfg.New_Configuration">
 		<cobolclean debug="true" destdir="${basedir}/New_Configuration.bin" desttype="exe">
 			<mffilelist refid="cobol_file_set_1"/>
-		</cobolclean>
-		<cobolclean destdir="${basedir}/New_Configuration.bin" desttype="exe">
-			<mffilelist>
-				<file name="STRING_FUNCTIONS3"/>
-			</mffilelist>
 		</cobolclean>
 	</target>
 	<!--  *******************  -->
