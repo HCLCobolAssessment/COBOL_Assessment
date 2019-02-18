@@ -15,11 +15,13 @@
        01 str4 PIC A(30) VALUE 'MAINFRAME'.    
        01 SPLIT1 PIC X(3).
        01 SPLIT2 PIC X(4).
-       01 SPLIT3 PIC X(7).	   
+       01 SPLIT3 PIC X(7).	
+      
 
        PROCEDURE DIVISION.
        DISPLAY 'hi hi bye, sample'.
        DISPLAY "Task1 = " xStr(9:3)
+       ACCEPT str4.
               *> count the number of chars in string, store in aNum     
               *>INSPECT yStr TALLYING aNum FOR ALL CHARACTERS.
               DISPLAY "aNum : "aNum.
