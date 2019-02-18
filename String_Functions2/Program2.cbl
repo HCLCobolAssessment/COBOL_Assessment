@@ -18,7 +18,7 @@
        01 SPLIT3 PIC X(7).	   
 
        PROCEDURE DIVISION.
-       DISPLAY 'hi hi bye, **y***'.
+       DISPLAY 'hi hi bye, sample'.
        DISPLAY "Task1 = " xStr(9:3)
               *> count the number of chars in string, store in aNum     
               *>INSPECT yStr TALLYING aNum FOR ALL CHARACTERS.
