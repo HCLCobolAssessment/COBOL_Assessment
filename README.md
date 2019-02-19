@@ -1,8 +1,8 @@
 # COBOL_Assessment
 ##Please follow the instructions given below
 Open you eclipse and create a new workspace
-https://github.com/LeedaMerolin/COBOL_Assessment.git
-LeedaMerolin/leeda@123
+## https://github.com/LeedaMerolin/COBOL_Assessment.git
+## LeedaMerolin/leeda@123
 Click File->Import->git->clone URI
 Paste the given link in the pop-up with the credentials provided
 Create a new cobol project and create a cobol program file with the file name 'Program1.cbl'
