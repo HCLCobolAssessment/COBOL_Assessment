@@ -30,7 +30,7 @@
               DISPLAY "OLD STRING : "yStr.
               INSPECT yStr REPLACING ALL 'L' BY 'X'.
               DISPLAY "NEW str : "yStr.
-              DISPLAY "HAIIIII".
+              DISPLAY "HAIII".
               *> string concatenate
               STRING str2 DELIMITED BY SIZE
               str3 DELIMITED BY SPACE
