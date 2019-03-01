@@ -1,51 +1,101 @@
-       IDENTIFICATION DIVISION.
-       PROGRAM-ID. Program2.
-       AUTHOR.  HCL.
-       DATA DIVISION.
-       WORKING-STORAGE SECTION.
-       01 xStr PIC X(50) VALUE "Hii Th All is is the mainframe".
-       01 aNum PIC 9(2) VALUE 0.
-       01 bNum PIC 9(2) VALUE 0.
-       01 yStr PIC X(07) VALUE 'HCLWO'.
-       01 cNum PIC X(30).
-       01 str1 PIC A(16) VALUE 'HI kit COMING..'.
-       01 str2 PIC A(7) VALUE 'WELCOME'.
-       01 str3 PIC A(3) VALUE 'TO '.
-       01 dCount PIC 99 VALUE 20.
-       01 str4 PIC A(30) VALUE 'MAINFRAME'.    
-       01 SPLIT1 PIC X(3).
-       01 SPLIT2 PIC X(4).
-       01 SPLIT3 PIC X(7).	   
+000100 IDENTIFICATION DIVISION.                                         00010025
+000200                                                                  00020026
+000300 PROGRAM-ID.                    PROGRAM1.                         00030027
+000400 AUTHOR.                        HCL     .                         00040026
+000500 DATE-WRITTEN.                  FEB 2019.                         00050027
+000600                                                                  00060026
+000700******************************************************************00070026
+002300                                                                  00230001
+002400 ENVIRONMENT DIVISION.                                            00240001
+002500                                                                  00250001
+002600***************************************************************** 00260001
+002700**                                                                00270001
+002800**   CONFIGURATION SECTION                                        00280001
+002900**                                                                00290001
+003000******************************************************************00300001
+003100                                                                  00310001
+003200 CONFIGURATION SECTION.                                           00320001
+003300                                                                  00330001
+003400 SPECIAL-NAMES.                                                   00340026
+003500      DECIMAL-POINT IS COMMA.                                     00350026
+003600                                                                  00360026
+003700******************************************************************00370026
+003800**                                                                00380026
+003900**   INPUT-OUTPUT SECTION                                         00390026
+004000**                                                                00400026
+004100******************************************************************00410026
+004200                                                                  00420026
+004300 INPUT-OUTPUT SECTION.                                            00430026
+004400                                                                  00440026
+004500 FILE-CONTROL.                                                    00450026
+004600******************************************************************00460026
+004700**                                                                00470026
+004800**   DATA DIVISION                                                00480026
+004900**                                                                00490026
+005000******************************************************************00500026
+005100                                                                  00510026
+005200 DATA DIVISION.                                                   00520026
+005300                                                                  00530026
+005400******************************************************************00540026
+005500**                                                                00550026
+005600**   FILE SECTION                                                 00560026
+005700**                                                                00570026
+005800******************************************************************00580026
+005900                                                                  00590026
+006000 FILE SECTION.                                                    00600026
+006100                                                                  00610026
+006200******************************************************************00620026
+006300**                                                                00630026
+006400**  WORKING-STORAGE SECTION                                       00640026
+006500**                                                                00650026
+006600******************************************************************00660026
+006700                                                                  00670026
+006800 WORKING-STORAGE SECTION.                                         00680026
+006900                                                                  00690026
+007000 01 WS-CNT1       PIC 9(2).                                       00700026
+007100 01 WS-CNT2       PIC 9(2).                                       00710026
+007200 01 WS-INPUT1     PIC X(9) VALUE 'BEAUTIFUL'.                     00720026
+007300 01 WS-STR1       PIC X(7)  VALUE 'WELCOME'.                      00730026
+007400 01 WS-STR2       PIC X(2)  VALUE 'TO'.                           00740026
+007500 01 WS-STR3       PIC X(3)  VALUE 'HCL'.                          00750026
+007600 01 WS-STRING     PIC X(12).                                      00760026
+007700 01 WS-UNSTRING   PIC X(16) VALUE 'ENJOY&THE&CAREER'.             00770026
+007800 01 WS-UNSTR1     PIC X(5).                                       00780026
+007900 01 WS-UNSTR2     PIC X(3).                                       00790026
+008000 01 WS-UNSTR3     PIC X(6).                                       00800026
 
-       PROCEDURE DIVISION.
-       DISPLAY 'hi hi hi, sample'.
-       DISPLAY "Task1 = " xStr(9:3)
-              *> count the number of chars in string, store in aNum     
-              *>INSPECT yStr TALLYING aNum FOR ALL CHARACTERS.
-              DISPLAY "aNum : "aNum.
-              *> count just the A characters
-              INSPECT yStr TALLYING bNum FOR ALL 'L'.
-              DISPLAY "bNum : "bNum.
-              *> replace A chars with X in strings
-              DISPLAY "OLD STRING : "yStr.
-              INSPECT yStr REPLACING ALL 'L' BY 'X'.
-              DISPLAY "NEW str : "yStr.
-              DISPLAY "HAIII".
-              *> string concatenate
-              STRING str2 DELIMITED BY SIZE
-              str3 DELIMITED BY SPACE
-              str4 DELIMITED BY SIZE
-              INTO cNum
-              WITH POINTER dCount
-              ON OVERFLOW DISPLAY 'OVERFLOW!'
-              END-STRING.
-              DISPLAY 'WS-STRING : 'cNum.
-              DISPLAY 'WS-COUNT : 'dCount.
-              *> string split
-              UNSTRING str1 DELIMITED BY SPACE
-              INTO SPLIT1, SPLIT2, SPLIT3
-              END-UNSTRING.
-              DISPLAY 'SPLIT1 : 'SPLIT1.
-              DISPLAY 'SPLIT2 : 'SPLIT2.
-              DISPLAY 'SPLIT3 : 'SPLIT3.
-       STOP RUN.
+009040*----------------------------------------------------------------*00904026
+009050 PROCEDURE DIVISION .                                             00905026
+009060*----------------------------------------------------------------*00906026
+009070 A-MAIN                                      SECTION.             00907026
+009080*----------------------------------------------------------------*00908026
+009090 A-001-REP.                                                       00909026
+009100                                                                  00910026
+                                                                        00920026
+009400         INSPECT WS-INPUT1 TALLYING WS-CNT2 FOR ALL 'A'.          00940026
+009500         DISPLAY "WS-CNT2 : " WS-CNT2.                            00950026
+
+009700         INSPECT WS-INPUT1 REPLACING ALL 'A' BY 'U'.              00970026
+009800         DISPLAY "STRING AFTER REPLACE" WS-INPUT1.                00980026
+009900                                                                  00990026
+
+010000 A-002-STR.                                                       01000026
+010100         STRING WS-STR1 DELIMITED BY SIZE
+010200                WS-STR2 DELIMITED BY SPACE
+010300                WS-STR3 DELIMITED BY SIZE
+010400                INTO WS-STRING 
+               END-STRING. 
+010700         DISPLAY "WS-STRING : " WS-STRING.                        01070026                
+010500                                                                  01050026
+
+010600 A-003-UNSTR.                                                     01060026
+010800          UNSTRING WS-UNSTRING DELIMITED BY '&'
+                  INTO WS-UNSTR1, WS-UNSTR2, WS-UNSTR3
+                END-UNSTRING.
+011700                                                                  01170026
+011800         DISPLAY "WS-UNSTR1: " WS-UNSTR1.                         01180026
+011900         DISPLAY "WS-UNSTR2: " WS-UNSTR2.                         01190026
+012000         DISPLAY "WS-UNSTR3: " WS-UNSTR3.                         01200026
+012300 A-999.                                                           01230026
+012400     GOBACK.                                                      01240026
+012500                                                                  01250026
