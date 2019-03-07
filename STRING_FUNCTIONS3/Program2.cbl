@@ -54,7 +54,7 @@
 006900                                                                  00690026
 007000 01 WS-CNT1       PIC 9(2).                                       00700026
 007100 01 WS-CNT2       PIC 9(2).                                       00710026
-007200 01 WS-INPUT1     PIC X(9) VALUE 'BEAUTIFUL'.                     00720026
+007200 01 WS-INPUT1     PIC X(9) VALUE 'WONDERFUL'.                     00720026
 007300 01 WS-STR1       PIC X(7)  VALUE 'WELCOME'.                      00730026
 007400 01 WS-STR2       PIC X(2)  VALUE 'TO'.                           00740026
 007500 01 WS-STR3       PIC X(3)  VALUE 'HCL'.                          00750026
